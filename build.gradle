@@ -1,0 +1,21 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    gradlePluginPortal()
+  }
+}
+
+allprojects {
+  repositories {
+    mavenCentral()
+  }
+  group = 'net.ckozak.speeddial'
+  apply plugin: 'java-library'
+  sourceCompatibility = 11
+  targetCompatibility = 11
+  test {
+    useJUnitPlatform {
+
+    }
+  }
+}

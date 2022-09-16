@@ -1,0 +1,43 @@
+package net.ckozak.speeddial.processor.example;
+
+import java.io.IOException;
+import javax.annotation.processing.Generated;
+
+@Generated("net.ckozak.speeddial.processor.SpeedDialProcessor")
+public final class SimpleSpeedDialer {
+    private SimpleSpeedDialer() {}
+
+    public static void poke(Object speedDialDelegate) {
+        if (speedDialDelegate instanceof Simple.SimpleOne) {
+            ((Simple.SimpleOne) speedDialDelegate).poke();
+            return;
+        }
+        if (speedDialDelegate instanceof Simple.SimpleTwo) {
+            ((Simple.SimpleTwo) speedDialDelegate).poke();
+            return;
+        }
+        ((Simple) speedDialDelegate).poke();
+    }
+
+    public static String ping(Runnable speedDialDelegate) {
+        if (speedDialDelegate instanceof Simple.SimpleOne) {
+            return ((Simple.SimpleOne) speedDialDelegate).ping();
+        }
+        return ((Simple) speedDialDelegate).ping();
+    }
+
+    public static <T> T complex(Runnable speedDialDelegate, T first, T second, String third) {
+        if (speedDialDelegate instanceof Simple.SimpleOne) {
+            return ((Simple.SimpleOne) speedDialDelegate).<T>complex(first, second, third);
+        }
+        return ((Simple) speedDialDelegate).<T>complex(first, second, third);
+    }
+
+    public static void throwing(Object speedDialDelegate) throws IOException {
+        if (speedDialDelegate instanceof Simple.SimpleOne) {
+            ((Simple.SimpleOne) speedDialDelegate).throwing();
+            return;
+        }
+        ((Simple) speedDialDelegate).throwing();
+    }
+}

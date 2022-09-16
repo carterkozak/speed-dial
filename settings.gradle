@@ -1,0 +1,4 @@
+rootProject.name = "speed-dial-root"
+
+include "speed-dial-annotations"
+include "speed-dial-processor"
